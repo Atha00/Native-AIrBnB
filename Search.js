@@ -41,7 +41,7 @@ class Search extends React.Component {
                 })
                 .then(response => {
                   console.log(response.data);
-                  this.props.navigation.navigate("Rooms", {
+                  this.props.navigation.navigate("RoomsList", {
                     data: response.data.rooms
                   });
                 })

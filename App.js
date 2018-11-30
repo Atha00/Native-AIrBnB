@@ -5,7 +5,8 @@ import HomeScreen from "./Home";
 import ProfileScreen from "./Profile";
 import SignUpScreen from "./SignUp";
 import SearchScreen from "./Search";
-import RoomsScreen from "./Rooms";
+import RoomsListScreen from "./RoomsList";
+import DetailsScreen from "./RoomDetails";
 
 const AppNavigator = createStackNavigator({
   Home: {
@@ -26,8 +27,11 @@ const AppNavigator = createStackNavigator({
   Search: {
     screen: SearchScreen
   },
-  Rooms: {
-    screen: RoomsScreen
+  RoomsList: {
+    screen: RoomsListScreen
+  },
+  RoomDetails: {
+    screen: DetailsScreen
   }
 });
 

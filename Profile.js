@@ -3,18 +3,20 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 class Profile extends React.Component {
   static navigationOptions = {
-    title: "LOL",
+    title: "Votre profil",
     headerStyle: {
       backgroundColor: "#fc5c63"
     },
     headerTitleStyle: {
-      color: "white"
+      color: "white",
+      fontSize: 24,
+      fontWeight: "200"
     }
   };
   render() {
     return (
       <View style={styles.container}>
-        <View>
+        <View style={styles.buttonView}>
           <TouchableOpacity
             style={styles.button}
             title="Go to Search page"
@@ -25,14 +27,16 @@ class Profile extends React.Component {
             <Text style={styles.buttonText}>Search</Text>
           </TouchableOpacity>
         </View>
-        <Text>
-          Welcome to YOU, {this.props.navigation.state.params.username}
+        <Text style={styles.generalText}>
+          {this.props.navigation.state.params.username} : your profile
         </Text>
         <Image
           style={[{ width: 200, height: 200 }, styles.profileImage]}
           source={{ uri: this.props.navigation.state.params.picture }}
         />
-        <Text>{this.props.navigation.state.params.description}</Text>
+        <Text style={styles.generalText}>
+          {this.props.navigation.state.params.description}
+        </Text>
       </View>
     );
   }
@@ -43,13 +47,16 @@ class Profile extends React.Component {
 }
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
     backgroundColor: "#fc5c63",
     alignItems: "center",
     flex: 1
   },
+  buttonView: {
+    marginBottom: 100
+  },
   profileImage: {
-    borderRadius: 50
+    borderRadius: 100,
+    margin: 10
   },
   button: {
     backgroundColor: "white",
@@ -63,6 +70,11 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fc5c63",
     fontSize: 20
+  },
+  generalText: {
+    color: "white",
+    fontSize: 18,
+    margin: 10
   }
 });
 

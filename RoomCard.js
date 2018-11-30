@@ -4,6 +4,7 @@ import StarRating from "react-native-star-rating";
 
 class RoomCard extends React.Component {
   render() {
+    //[{ backgroundColor: 'red'}, this.props.style]
     return (
       <View style={styles.container}>
         <ImageBackground

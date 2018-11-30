@@ -18,12 +18,14 @@ class Home extends React.Component {
   };
 
   static navigationOptions = {
-    title: "LOL",
+    title: "LogIn",
     headerStyle: {
       backgroundColor: "#fc5c63"
     },
     headerTitleStyle: {
-      color: "white"
+      color: "white",
+      fontSize: 24,
+      fontWeight: "200"
     }
   };
   render() {
@@ -44,6 +46,7 @@ class Home extends React.Component {
                 email: value
               });
             }}
+            value={this.state.email}
           />
           <TextInput
             style={styles.loginInput}
@@ -53,6 +56,7 @@ class Home extends React.Component {
                 password: value
               });
             }}
+            value={this.state.password}
           />
           <TouchableOpacity
             style={styles.button}
