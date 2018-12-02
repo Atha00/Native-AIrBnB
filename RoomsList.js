@@ -29,7 +29,7 @@ class Rooms extends React.Component {
   render() {
     console.log(this.state.data);
     return (
-      <View>
+      <View style={styles.container}>
         <FlatList
           data={this.state.data}
           keyExtractor={this._keyExtractor}
@@ -37,6 +37,7 @@ class Rooms extends React.Component {
             <TouchableOpacity
               title="Go to results page"
               onPress={() => {
+                console.log("anything occurs ?", item._id);
                 this.props.navigation.navigate("RoomDetails", {
                   roomId: item._id
                 });
@@ -58,6 +59,10 @@ class Rooms extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 30
+  }
+});
 
 export default Rooms;

@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   buttonView: {
-    marginBottom: 100
+    marginBottom: 80,
+    marginTop: 30
   },
   profileImage: {
     borderRadius: 100,

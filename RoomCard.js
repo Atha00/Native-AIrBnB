@@ -6,9 +6,9 @@ class RoomCard extends React.Component {
   render() {
     //[{ backgroundColor: 'red'}, this.props.style]
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, this.props.globalMargin]}>
         <ImageBackground
-          style={styles.roomPicture}
+          style={[styles.roomPicture, this.props.imgScale]}
           source={{ uri: this.props.roomPicture }}
         >
           <View style={styles.blockprice}>
@@ -16,7 +16,7 @@ class RoomCard extends React.Component {
           </View>
         </ImageBackground>
 
-        <View style={styles.legend}>
+        <View style={[styles.legend, this.props.legendScale]}>
           <View style={{ width: "75%" }}>
             <Text style={styles.titleRoom} numberOfLines={1}>
               {this.props.title}

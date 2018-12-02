@@ -13,29 +13,14 @@ import SearchScreen from "./Search";
 import RoomsListScreen from "./RoomsList";
 import DetailsScreen from "./RoomDetails";
 
-const TabNavigator = createBottomTabNavigator(
+export default createBottomTabNavigator(
   {
-    Home: {
-      screen: HomeScreen
-      // navigationOptions: {
-      //   header: null
-      // }
-    },
-    SignUp: {
-      screen: SignUpScreen
-    },
-    Profile: {
-      screen: ProfileScreen
-    },
-    Search: {
-      screen: SearchScreen
-    },
-    RoomsList: {
-      screen: RoomsListScreen
-    },
-    RoomDetails: {
-      screen: DetailsScreen
-    }
+    Home: HomeScreen,
+    Profile: ProfileScreen,
+    Search: SearchScreen,
+    SignUp: SignUpScreen,
+    RoomsList: RoomsListScreen,
+    RoomDetails: DetailsScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -43,36 +28,28 @@ const TabNavigator = createBottomTabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         if (routeName === "Home") {
-          iconName = `home`;
+          iconName = `home${focused ? "" : "-outline"}`;
         } else if (routeName === "Profile") {
-          iconName = `user`;
+          iconName = `user${focused ? "" : "-outline"}`;
         } else if (routeName === "Search") {
-          iconName = `search`;
+          iconName = `search${focused ? "" : "-outline"}`;
         } else if (routeName === "SignUp") {
-          iconName = `envelope-open`;
+          iconName = `envelope-open${focused ? "" : "-outline"}`;
         } else if (routeName === "RoomsList") {
-          iconName = `list-ul`;
+          iconName = `list-ul${focused ? "" : "-outline"}`;
         } else if (routeName === "RoomDetails") {
-          iconName = `location-arrow`;
+          iconName = `location-arrow${focused ? "" : "-outline"}`;
         }
         return (
           <Icon name={iconName} size={horizontal ? 20 : 25} color={tintColor} />
         );
       }
-      // tabBarOnPress: ({navigation}) => {}
     }),
     tabBarOptions: {
-      activeTintColor: "white",
-      inactiveTintColor: "#fc5c63",
-      activeBackgroundColor: "#fc5c63",
-      inactiveBackgroundColor: "white",
-      style: {
-        backgroundColor: "#fc5c63",
-        borderTopWidth: 0
-      }
+      activeTintColor: "tomato",
+      inactiveTintColor: "gray"
     }
-  },
-  { backBehavior: "initialRoute" }
+  }
 );
 
-export default createAppContainer(TabNavigator);
+const styles = StyleSheet.create({});

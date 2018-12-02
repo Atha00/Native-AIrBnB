@@ -31,7 +31,9 @@ class Home extends React.Component {
   render() {
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-        <ScrollView contentContainerStyle={styles.container}>
+        <ScrollView
+          contentContainerStyle={[{ marginTop: 50 }, styles.container]}
+        >
           <Image
             style={{ height: 200, width: 200, marginTop: -150 }}
             source={require("./assets/logo.png")}
